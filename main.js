@@ -1,53 +1,44 @@
-// function timer(seconds) {
-//   const now = Date.now();
-//   const then = now + seconds * 1000;
-//   displayTimeleft(seconds);
+var timerId;
 
-//   countdown = setInterval(() => {
-//     const secondsLeft = Math.round((then - Date.now()) / 1000);
+function startTimer(duration) {
+  var start = Date.now(),
+    diff,
+    minutes,
+    seconds;
+  var duration = document.querySelector("#minutes").value * 60;
 
-//     if (secondsLeft <= 0) {
-//       clearInterval(countdown);
-//       return;
-//     }
+  function timer() {
+    diff = duration - (((Date.now() - start) / 1000) | 0);
 
-//     displayTimeleft(secondsLeft);
-//   }, 1000);
-// }
+    minutes = (diff / 60) | 0;
+    seconds = diff % 60 | 0;
 
-// function displayTimeleft(seconds) {
-//   const minutes = Math.floor(seconds / 60);
-//   const remainderSeconds = seconds % 60;
-//   const display = `${minutes}:${remainderSeconds}`;
-//   console.log(display);
+    let display = `${minutes < 10 ? "0" : ""}${minutes}:${
+      seconds < 10 ? "0" : ""
+    }${seconds}`;
+    document.title = display;
 
-//   document.querySelector("#timer").innerHTML.value = display;
-// }
-
-// document.getElementById("timer").innerHTML = setTimer;
-
-document.querySelector("#startButton").addEventListener("click", () => {
-  const settedTime = document.querySelector("#minutes").value * 60 * 1000;
-  const oldTime = Date.now();
-
-  const timerId = setInterval(() => {
-    const currentTime = Date.now();
-    const diff = currentTime - oldTime;
-
-    const remainderMSec = settedTime - diff;
-
-    const seconds = Math.ceil((remainderMSec / 1000) % 60);
-
-    const min = Math.floor(remainderMSec / 1000 / 60);
-
-    let display = `${min}:${seconds < 10 ? "0" : ""}${seconds}`;
-
-    if (remainderMSec <= 0) {
+    if (diff <= 0) {
       clearInterval(timerId);
 
-      display = "0";
+      display = "00:00";
+      document.title = "00:00";
     }
 
     document.querySelector("#timer").innerHTML = display;
-  }, 1000);
+  }
+  timer();
+  timerId = setInterval(timer, 1000);
+}
+
+document.querySelector("#startButton").addEventListener("click", () => {
+  startTimer();
+  document.getElementById("startButton").style.display = "none";
+});
+
+document.querySelector("#stopButton").addEventListener("click", () => {
+  clearInterval(timerId);
+  document.querySelector("#timer").innerHTML = "00:00";
+  document.title = "00:00";
+  document.getElementById("startButton").style.display = "inline-block";
 });

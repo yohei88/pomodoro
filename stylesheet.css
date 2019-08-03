@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: Amatic SC; */
 }
 
 body {
@@ -15,15 +14,15 @@ body {
 }
 
 .circle {
-  width: 15rem;
-  height: 15rem;
+  width: 25rem;
+  height: 25rem;
   border-radius: 50%;
   color: black;
   font-size: 8rem;
   background: #e85f61;
   margin: 2rem auto;
   text-align: center;
-  line-height: 15rem;
+  line-height: 25rem;
 }
 
 .btn {

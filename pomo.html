@@ -10,12 +10,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./stylesheet.css"></link>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.slim.js"
-  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-  crossorigin="anonymous"></script>
     <title>Document</title>
   </head>
   <body>
@@ -23,20 +18,14 @@
       <div class="container text-center">
         <div class="box">
           Pomodoro
-          <p class="circle" id="timer" class="display"></p>
+          <p class="circle" id="timer" class="display">25:00</p>
         </div>
-            <input type="number" id="minutes" placeholder="minutes">
+            <input type="number" id="minutes" placeholder="分" min="0" value="25">
 
+            <button id="startButton" type="button" class="btn btn-primary btn-lg" style="display:inline-block;">START</button>
+            <button id="stopButton" type="button" class="btn btn-primary btn-lg">QUIT</button>
 
-
-            <!-- <button type="button" class="start btn btn-primary btn-lg" value="1" onclick="check(this)">はじめる</button>
-            <button type="button" class="stop btn btn-primary btn-lg" value="0" onclick="check(this)">やめる</button> -->
-
-
-            <button id="startButton" type="button" class="start btn btn-primary btn-lg">はじめる</button>
-            <button id="stopButton" type="button" class="start btn btn-primary btn-lg">やめる</button>
-
-
+            
       </div>
     </div>
     <script src="main.js"></script>

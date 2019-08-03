@@ -1,2 +1,2 @@
 # pomodoro
-Demo => <a href="https://yoyo1217.github.io/pomodoro/">
+[Demo](https://yoyo1217.github.io/pomodoro/)

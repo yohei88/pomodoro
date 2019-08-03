@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,16 +12,31 @@
     />
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./stylesheet.css"></link>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous"></script>
     <title>Document</title>
   </head>
   <body>
     <div id="main">
-      <div class="container">
-        <div class="box col-md-4 text-center">
+      <div class="container text-center">
+        <div class="box">
           Pomodoro
-          <p class="circle">25:00</p>
+          <p class="circle" id="timer" class="display"></p>
         </div>
-        <button type="button" class="start btn btn-primary btn-sm">start
+            <input type="number" id="minutes" placeholder="minutes">
+
+
+
+            <!-- <button type="button" class="start btn btn-primary btn-lg" value="1" onclick="check(this)">はじめる</button>
+            <button type="button" class="stop btn btn-primary btn-lg" value="0" onclick="check(this)">やめる</button> -->
+
+
+            <button id="startButton" type="button" class="start btn btn-primary btn-lg">はじめる</button>
+            <button id="stopButton" type="button" class="start btn btn-primary btn-lg">やめる</button>
+
+
       </div>
     </div>
     <script src="main.js"></script>

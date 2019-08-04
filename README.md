@@ -1,2 +1,2 @@
 # pomodoro
-[Demo](https://yoyo1217.github.io/pomodoro/)
+[Demo](https://pomodoro-e75ec.firebaseapp.com/)

@@ -1,2 +1,2 @@
 # pomodoro
-[Demo](https://pomodoro-e75ec.firebaseapp.com/)
+Simple pomodoro timer with pure javascript
